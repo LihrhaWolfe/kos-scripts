@@ -14,7 +14,11 @@ function donode {
 	print "steering to face node...".
 	wait until (nodetodo:time - ((nodetodo:burnvector:mag/(ship:availablethrust/ship:mass))/2) <= time:seconds).
 	lock throttle to min(1, nodetodo:burnvector:mag/10 + 0.05).
-	wait until nodetodo:burnvector:mag < 0.1.
+	prevMag = nodetodo:burnvector:mag.
+	until nodetodo:burnvector:mag > prevMag {
+		prevMag = nodetodo:burnvector:mag.
+		wait 0.
+	}
 	remove nodetodo.
 	
 	return "node Complete!".
