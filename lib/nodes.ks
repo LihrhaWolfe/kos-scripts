@@ -8,10 +8,12 @@ function donode {
 	wait 1.
 	
 	sas off.
+	print "starting warp to node...".
 	kuniverse:timewarp:warpto(nodetodo:time - ((nodetodo:burnvector:mag/(ship:availablethrust/ship:mass))/2) - 60).
 	lock steering to nodetodo:burnvector.
+	print "steering to face node...".
 	wait until (nodetodo:time - ((nodetodo:burnvector:mag/(ship:availablethrust/ship:mass))/2) <= time:seconds).
-	lock throttle to min(1, nodetodo:burnvector:mag/10).
+	lock throttle to min(1, nodetodo:burnvector:mag/10 + 0.05).
 	wait until nodetodo:burnvector:mag < 0.1.
 	remove nodetodo.
 	

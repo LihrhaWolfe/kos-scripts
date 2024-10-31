@@ -31,6 +31,8 @@ lock throttle to 0.
 unlock steering.
 sas on.
 
+run circle.ks(true).
+
 wait until eta:apoapsis < 16.
 print "starting orbit burn...".
 sas off.
