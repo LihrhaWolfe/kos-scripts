@@ -8,7 +8,7 @@ stage.
 lock currentGravity to ship:orbit:body:mu/((ship:orbit:body:radius + ship:altitude)^2).
 lock twr to ship:thrust/(ship:mass*currentGravity).
 
-lock throttle to min(1,(targetTWR-twr)).
+lock throttle to max(0, min(1, (targetTWR*ship:mass*currentGravity)/(ship:availablethrust+0.0001))).
 lock steering to heading(90,(90-((ship:altitude/targetAltitude)*80))).
 
 set prevthrust to ship:availablethrust.

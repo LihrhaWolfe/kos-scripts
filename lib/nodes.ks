@@ -69,7 +69,7 @@ function nodecircle {
 		print(bestthisnode).
 		print("===").
 		set thisnode to bestthisnode.
-		wait 1.
+		wait 0.
 		
 		add thisnode.
 		if thisnode:orbit:eccentricity >= prevecn {remove thisnode. return thisnode.}
