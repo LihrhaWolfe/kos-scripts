@@ -33,13 +33,8 @@ sas on.
 
 run circle.ks(true).
 
-wait until eta:apoapsis < 16.
-print "starting orbit burn...".
-sas off.
-lock steering to heading(90,max(90-((ship:altitude/1000)*9),0)).
-lock throttle to 1. 
-
-wait until ship:periapsis > 75*1000.
 print "orbit reached!".
+print "with apo of " + ship:orbit:apoapsis.
+print "with peri of " + ship:orbit:periapsis.
 unlock steering.
 sas on.
