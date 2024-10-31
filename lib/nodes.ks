@@ -4,7 +4,7 @@ function donode {
 	parameter nodetodo.
 	
 	if not nodetodo:istype("node") {return "node passed isn't of type node.".}
-	add nodetodo.
+	if not hasnode {add nodetodo.}
 	wait 1.
 	
 	sas off.
@@ -14,10 +14,10 @@ function donode {
 	print "steering to face node...".
 	wait until (nodetodo:time - ((nodetodo:burnvector:mag/(ship:availablethrust/ship:mass))/2) <= time:seconds).
 	lock throttle to min(1, nodetodo:burnvector:mag/10 + 0.05).
-	prevMag = nodetodo:burnvector:mag.
+	set prevMag to nodetodo:burnvector:mag + 10.
 	until nodetodo:burnvector:mag > prevMag {
-		prevMag = nodetodo:burnvector:mag.
-		wait 0.
+		set prevMag to nodetodo:burnvector:mag.
+		wait 0.05.
 	}
 	remove nodetodo.
 	
