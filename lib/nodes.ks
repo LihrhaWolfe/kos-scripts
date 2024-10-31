@@ -1,7 +1,7 @@
 
 // just does the node given
 function donode {
-	parameter nodetodo, dowarp is true.
+	parameter nodetodo.
 	
 	if not nodetodo:istype("node") {return "node passed isn't of type node.".}
 	add nodetodo.
