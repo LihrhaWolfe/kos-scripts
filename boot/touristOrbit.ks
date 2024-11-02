@@ -11,7 +11,7 @@ wait 1.
 stage.
 
 lock throttle to 1.
-lock steering to heading(90,(90-((ship:apoapsis/1000)*0.9))).
+lock steering to heading(90,(90-((ship:apoapsis/1000)*0.8))).
 
 set prevthrust to ship:availablethrust.
 when ship:availablethrust < prevthrust then {
