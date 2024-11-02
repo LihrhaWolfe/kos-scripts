@@ -8,7 +8,7 @@ function donode {
 	wait 1.
 	
 	sas off.
-	print "node burn time is " + nodetodo:burnvector:mag/(ship:availablethrust/ship:mass) + " seconds"
+	print "node burn time is " + nodetodo:burnvector:mag/(ship:availablethrust/ship:mass) + " seconds".
 	print "starting warp to node...".
 	kuniverse:timewarp:warpto(nodetodo:time - ((nodetodo:burnvector:mag/(ship:availablethrust/ship:mass))/2) - 60).
 	lock steering to nodetodo:burnvector.
