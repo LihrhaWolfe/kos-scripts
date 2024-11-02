@@ -1,4 +1,6 @@
 //sets the default values of the arguments if they aren't provided
+//example usage of the arguments in the script for the default values is "run launchSuborbit(100000, 1.5)."
+//the first argument being the target altitude in meters and the second being the rockets target acceleration value in thrust to weight
 parameter targetAltitude is 100000, targetTWR is 1.5.
 
 print "launching to " + targetAltitude + " apoapsis with twr of " + targetTWR.
