@@ -33,8 +33,8 @@ function nodecircle {
 	remove thisnode.
 	
 	set adjustlist to list().
-	adjustlist:add({set newthisnode:time to thisnode:time+scale.}).
-	adjustlist:add({set newthisnode:time to thisnode:time-scale.}).
+	//adjustlist:add({set newthisnode:time to thisnode:time+scale.}).
+	//adjustlist:add({set newthisnode:time to thisnode:time-scale.}).
 	//adjustlist:add({set newthisnode:radialout to thisnode:radialout+scale.}).
 	//adjustlist:add({set newthisnode:radialout to thisnode:radialout-scale.}).
 	//adjustlist:add({set newthisnode:normal to thisnode:normal+scale.}).

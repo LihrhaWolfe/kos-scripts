@@ -14,7 +14,7 @@ lock twr to ship:thrust/(ship:mass*currentGravity).
 //this sets the throttle to the percentage needed to maintain the target twr
 lock throttle to min(1,(targetTWR-twr)).
 //this controls the steering and slowly tilts the rocket as it's apoapsis gets closer to the target altitude
-lock steering to heading(90,(90-((ship:altitude/targetAltitude)*80))).
+lock steering to heading(90,(90-((ship:apoapsis/targetAltitude)*80))).
 
 //this is what detects if a stage runs out of fuel and stages if it does so
 set prevthrust to ship:availablethrust.
