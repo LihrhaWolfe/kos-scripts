@@ -5,8 +5,8 @@ wait 3.
 
 until false {
 	print("press 'ctrl+c' to stop telemetry.").
-	print("twr: " + ship:thrust/(ship:mass*constant:g0)).
-	print("dv: " + ship:stagedeltav(ship:stagenum):current).
+	print("twr: " + ship:thrust/(ship:mass*(ship:orbit:body:mu/((ship:orbit:body:radius + ship:altitude)^2)))).
+	print("dv: " + ship:deltav).
 	print("ap: " + ship:apoapsis).
 	print("pe: " + ship:periapsis).
 	if hastarget {
