@@ -20,6 +20,7 @@ function donode {
 		set prevMag to nodetodo:burnvector:mag.
 		wait 0.05.
 	}
+	lock throttle to 0.
 	remove nodetodo.
 	
 	return "node Complete!".
