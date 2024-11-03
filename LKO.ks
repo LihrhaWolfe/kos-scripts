@@ -1,4 +1,4 @@
-parameter targetAltitude is 100000, targetTWR is 1.5.
+parameter targetAltitude is 100000, targetTWR is 1.5, targetHeading is 90.
 
 print "launching to " + targetAltitude + " apoapsis with twr of " + targetTWR.
 sas off.
@@ -9,7 +9,7 @@ lock currentGravity to ship:orbit:body:mu/((ship:orbit:body:radius + ship:altitu
 lock twr to ship:thrust/(ship:mass*currentGravity).
 
 lock throttle to max(0, min(1, (targetTWR*ship:mass*currentGravity)/(ship:availablethrust+0.0001))).
-lock steering to heading(90,(90-((ship:apoapsis/targetAltitude)*80))).
+lock steering to heading(targetHeading,(90-((ship:apoapsis/targetAltitude)*80))).
 
 set prevthrust to ship:availablethrust.
 when ship:availablethrust < prevthrust then {

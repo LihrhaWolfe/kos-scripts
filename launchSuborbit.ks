@@ -1,7 +1,7 @@
 //sets the default values of the arguments if they aren't provided
 //example usage of the arguments in the script for the default values is "run launchSuborbit(100000, 1.5)."
 //the first argument being the target altitude in meters and the second being the rockets target acceleration value in thrust to weight
-parameter targetAltitude is 100000, targetTWR is 1.5.
+parameter targetAltitude is 100000, targetTWR is 1.5, targetHeading is 90.
 
 print "launching to " + targetAltitude + " apoapsis with twr of " + targetTWR.
 wait 1.
@@ -14,7 +14,7 @@ lock twr to ship:thrust/(ship:mass*currentGravity).
 //this sets the throttle to the percentage needed to maintain the target twr
 lock throttle to min(1,(targetTWR-twr)).
 //this controls the steering and slowly tilts the rocket as it's apoapsis gets closer to the target altitude
-lock steering to heading(90,(90-((ship:apoapsis/targetAltitude)*80))).
+lock steering to heading(targetHeading,(90-((ship:apoapsis/targetAltitude)*80))).
 
 //this is what detects if a stage runs out of fuel and stages if it does so
 set prevthrust to ship:availablethrust.
