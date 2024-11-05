@@ -3,7 +3,6 @@ parameter targetAltitude is 100000, targetTWR is 1.5, targetHeading is 90.
 print "launching to " + targetAltitude + " apoapsis with twr of " + targetTWR.
 sas off.
 wait 1.
-stage.
 
 lock currentGravity to ship:orbit:body:mu/((ship:orbit:body:radius + ship:altitude)^2).
 lock twr to ship:thrust/(ship:mass*currentGravity).
@@ -12,7 +11,7 @@ lock throttle to max(0, min(1, (targetTWR*ship:mass*currentGravity)/(ship:availa
 lock steering to heading(targetHeading,(90-((ship:apoapsis/targetAltitude)*80))).
 
 set prevthrust to ship:availablethrust.
-when ship:availablethrust < prevthrust then {
+when ship:availablethrust < prevthrust or ship:availablethrust < 0.1 then {
 	print("staging! " + ship:stagenum).
 	stage.
 	wait 1.
