@@ -1,10 +1,10 @@
-parameter speed is 5, height is 5.
+parameter stop is true, speed is 5, height is 5.
 
 runoncepath("lib/flight.ks").
 
 print "preping burn to slow down...".
 
-suicideBurn().
+if stop {suicideBurn().}
 
 print "commencing touchdown on surface of " + ship:orbit:body:name.
 
