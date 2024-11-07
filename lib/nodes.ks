@@ -15,6 +15,21 @@ function donode {
 	print "steering to face node...".
 	wait until (nodetodo:time - ((nodetodo:burnvector:mag/(ship:availablethrust/ship:mass))/2) <= time:seconds).
 	lock throttle to min(1, nodetodo:burnvector:mag/10 + 0.05).
+
+	set prevthrust to ship:availablethrust.
+	when ship:availablethrust < prevthrust or ship:availablethrust < 0.1 then {
+		print("staging! " + ship:stagenum).
+		stage.
+		wait 1.
+		if ship:availablethrust < 0.1 {
+			print("staging! " + ship:stagenum).
+			stage.
+			wait 1.
+		}
+		set prevthrust to ship:availablethrust.
+		return true.
+	}
+
 	set prevMag to nodetodo:burnvector:mag + 10.
 	until nodetodo:burnvector:mag > prevMag {
 		set prevMag to nodetodo:burnvector:mag.
