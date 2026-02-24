@@ -1,4 +1,4 @@
-parameter stop is true, speed is 5, height is 5.
+parameter stop is true, speed is 2, height is 5.
 
 runoncepath("lib/flight.ks").
 

@@ -9,7 +9,7 @@ function descentSpeed {
     lock trgThrot to ((((ship:mass * currentGravity) / (ship:availablethrust+0.0001)))+(((ship:verticalspeed+speed)*-1)/10))-0.02.
 
     sas off.
-    lock steerDir to (srfretrograde * 1.2) + r(0.2,0.2,0).
+    lock steerDir to (srfretrograde) + r(0.2,0.2,0).
     lock steering to steerDir.
     wait 1.
     wait until vectordotproduct(ship:facing:forevector,steerDir:forevector) < 1.

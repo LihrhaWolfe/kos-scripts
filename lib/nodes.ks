@@ -37,6 +37,7 @@ function donode {
 	}
 	lock throttle to 0.
 	remove nodetodo.
+	sas on.
 	
 	return "node Complete!".
 }
