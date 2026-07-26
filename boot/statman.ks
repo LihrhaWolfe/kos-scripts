@@ -11,7 +11,7 @@ when ship:controlpart <> ship:partstagged("station core probe")[0] then {
 }
 when ship:controlpart = ship:partstagged("station core probe")[0] then {
 	sas off.
-	lock steering to r(270,0,0).
+	lock steering to r(270,0,-sun:rotationangle-90).
 	return true.
 }
 
