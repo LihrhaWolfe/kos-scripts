@@ -5,7 +5,7 @@ print "copying low kerbin orbit launch script...".
 copypath("0:LKO.ks","launch.ks").
 
 print "copying circle orbit script...".
-copypath("0:circleOrbit.ks","circle.ks").
+copypath("0:circle.ks","circle.ks").
 
 print "copying next node script...".
 copypath("0:nextnode.ks","nnod.ks").

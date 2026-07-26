@@ -4,7 +4,7 @@
 function descentSpeed {
     parameter speed is 5, height is 5.
 
-    set trgThrot to 0.
+    //set trgThrot to 0.
     lock currentGravity to ship:orbit:body:mu/((ship:orbit:body:radius + ship:altitude)^2).
     lock trgThrot to ((((ship:mass * currentGravity) / (ship:availablethrust+0.0001)))+(((ship:verticalspeed+speed)*-1)/10))-0.02.
 

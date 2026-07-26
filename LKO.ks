@@ -5,7 +5,7 @@ sas off.
 wait 1.
 
 lock currentGravity to ship:orbit:body:mu/((ship:orbit:body:radius + ship:altitude)^2).
-lock twr to ship:thrust/(ship:mass*currentGravity).
+//lock twr to ship:thrust/(ship:mass*currentGravity).
 
 lock throttle to max(0, min(1, (targetTWR*ship:mass*currentGravity)/(ship:availablethrust+0.0001))).
 lock steering to heading(targetHeading,(90-((ship:apoapsis/targetAltitude)*80))).
